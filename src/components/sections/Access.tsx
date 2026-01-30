@@ -31,24 +31,15 @@ export default function Access() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="aspect-[4/3] bg-[#D4C8B8] rounded-lg overflow-hidden shadow-md"
           >
-            {/* Placeholder for Google Map - Replace with actual embed */}
-            <div className="w-full h-full flex items-center justify-center bg-[#E8E6E3]">
-              <div className="text-center text-[#6B6B6B]">
-                <HiLocationMarker className="w-12 h-12 mx-auto mb-2 text-[#C9A962]" />
-                <p className="text-sm">Google Map</p>
-                <p className="text-xs mt-1">住所情報は店舗にお問い合わせください</p>
-              </div>
-            </div>
-            {/* Uncomment and replace with actual Google Maps embed URL when available */}
-            {/* <iframe
-              src={store.mapEmbedUrl}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.3!2d139.6965!3d35.6945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd57b87fb99%3A0x3e9e36a6d3d0f4b4!2z5p2x5Lqs6YO95paw5a6_5Yy66KW_5paw5a6_77yX5LiB55uu77yW4oiS77yV!5e0!3m2!1sja!2sjp!4v1234567890"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            ></iframe> */}
+            ></iframe>
           </motion.div>
 
           {/* Store Info */}
@@ -82,7 +73,9 @@ export default function Access() {
                 <div>
                   <p className="text-sm text-[#6B6B6B]">住所</p>
                   <p className="text-[#4A4A4A]">
-                    詳細はお問い合わせください
+                    〒160-0023<br />
+                    新宿区西新宿7-6-5<br />
+                    グローリア初穂生沼801
                   </p>
                 </div>
               </div>
@@ -104,13 +97,16 @@ export default function Access() {
               </div>
             </div>
 
-            {/* Note for future expansion */}
+            {/* Google Maps Link */}
             <div className="mt-8 pt-6 border-t border-[#E8E6E3]">
-              <p className="text-xs text-[#6B6B6B] text-center">
-                ※ 詳しい住所・アクセス方法は
-                <br />
-                ホットペッパービューティーまたはLINEでご確認ください
-              </p>
+              <a
+                href="https://maps.app.goo.gl/fhhJuMoWJBU5KQEC7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center text-sm text-[#C9A962] hover:underline"
+              >
+                Googleマップで見る →
+              </a>
             </div>
           </motion.div>
         </div>

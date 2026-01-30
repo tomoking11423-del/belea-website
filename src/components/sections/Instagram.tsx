@@ -6,14 +6,11 @@ import { useRef } from "react";
 import SectionTitle from "../common/SectionTitle";
 import { SiInstagram } from "react-icons/si";
 
-// Placeholder images - replace with actual Instagram feed
 const instagramPosts = [
-  { id: 1, image: "/images/gallery/treatment.jpg" },
-  { id: 2, image: "/images/stores/honten/interior.jpg" },
-  { id: 3, image: "/images/gallery/treatment.jpg" },
-  { id: 4, image: "/images/stores/honten/interior.jpg" },
-  { id: 5, image: "/images/gallery/treatment.jpg" },
-  { id: 6, image: "/images/stores/honten/interior.jpg" },
+  { id: 1, image: "/images/instagram/post1.png" },
+  { id: 2, image: "/images/instagram/post2.png" },
+  { id: 3, image: "/images/instagram/post3.png" },
+  { id: 4, image: "/images/instagram/post4.png" },
 ];
 
 export default function Instagram() {
@@ -28,7 +25,7 @@ export default function Instagram() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <SectionTitle englishTitle="INSTAGRAM" japaneseTitle="@belea_official" />
+          <SectionTitle englishTitle="INSTAGRAM" japaneseTitle="@facewax_belea" />
         </motion.div>
 
         {/* Instagram Grid */}
@@ -36,12 +33,12 @@ export default function Instagram() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 mb-10"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10"
         >
           {instagramPosts.map((post, index) => (
             <a
               key={post.id}
-              href="#"
+              href="https://www.instagram.com/facewax_belea"
               target="_blank"
               rel="noopener noreferrer"
               className="relative aspect-square bg-[#E8E6E3] rounded overflow-hidden group"
@@ -66,7 +63,7 @@ export default function Instagram() {
           className="text-center"
         >
           <a
-            href="#"
+            href="https://www.instagram.com/facewax_belea"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white rounded hover:opacity-90 transition-opacity font-medium"

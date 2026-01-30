@@ -6,11 +6,11 @@ import { useRef } from "react";
 import SectionTitle from "../common/SectionTitle";
 
 const companyInfo = [
-  { label: "会社名", value: "株式会社BELEA" },
-  { label: "代表者", value: "代表取締役 ○○ ○○" },
-  { label: "設立", value: "○○年○月" },
+  { label: "会社名", value: "株式会社MaVie" },
+  { label: "代表者", value: "代表取締役 金剛寺舞" },
+  { label: "設立", value: "2021年11月1日" },
   { label: "事業内容", value: "フェイスワックス専門サロンの運営" },
-  { label: "所在地", value: "詳細はお問い合わせください" },
+  { label: "所在地", value: "〒160-0023 新宿区西新宿7-6-5 グローリア初穂生沼801" },
   { label: "営業時間", value: "10:00〜20:00" },
   { label: "定休日", value: "不定休" },
   { label: "お問い合わせ", value: "LINE公式アカウントよりお問い合わせください" },

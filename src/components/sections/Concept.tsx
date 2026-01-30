@@ -5,26 +5,22 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import SectionTitle from "../common/SectionTitle";
-import { HiSparkles, HiSun, HiHeart } from "react-icons/hi";
 
 const effects = [
   {
     number: "01",
     title: "産毛除去",
     description: "細かい産毛まで根元からオフ。\n肌表面がなめらかに。",
-    icon: HiSparkles,
   },
   {
     number: "02",
     title: "角質除去",
     description: "古い角質も一緒にすっきり。\nターンオーバーを促進。",
-    icon: HiSun,
   },
   {
     number: "03",
     title: "トーンアップ",
     description: "肌が明るく、透明感アップ。\n化粧ノリも改善。",
-    icon: HiHeart,
   },
 ];
 
@@ -95,23 +91,19 @@ export default function Concept() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow text-center"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <span
-                  className="text-3xl text-[#C9A962] font-light"
-                  style={{ fontFamily: "var(--font-cormorant), serif" }}
-                >
-                  {effect.number}
-                </span>
-                <div className="w-10 h-10 rounded-full bg-[#C9A962]/10 flex items-center justify-center">
-                  <effect.icon className="w-5 h-5 text-[#C9A962]" />
-                </div>
-              </div>
-              <h4 className="text-lg font-medium text-[#4A4A4A] mb-2">
+              <span
+                className="text-4xl text-[#C9A962]/40 font-light tracking-wider"
+                style={{ fontFamily: "var(--font-cormorant), serif" }}
+              >
+                {effect.number}
+              </span>
+              <div className="w-8 h-px bg-[#C9A962] mx-auto my-4"></div>
+              <h4 className="text-lg font-medium text-[#4A4A4A] mb-3">
                 {effect.title}
               </h4>
-              <p className="text-sm text-[#6B6B6B] whitespace-pre-line">
+              <p className="text-sm text-[#6B6B6B] whitespace-pre-line leading-relaxed">
                 {effect.description}
               </p>
             </motion.div>
