@@ -1,6 +1,7 @@
 export interface MenuItem {
   id: string;
   name: string;
+  description?: string;
   price: number;
   originalPrice?: number;
 }
@@ -14,163 +15,121 @@ export interface MenuCategory {
 export const menuCategories: MenuCategory[] = [
   {
     id: "new-customer",
-    name: "新規",
+    name: "新規（初回限定）",
     items: [
       {
         id: "counseling",
-        name: "【初めての方でフェイスワックス不安な方へ】カウンセリングクーポン",
+        name: "【初めての方でフェイスワックス不安な方へ】カウンセリング",
+        description: "フェイスワックスが初めてで不安な方向けの無料相談。施術内容や流れを丁寧にご説明いたします。",
         price: 0,
       },
       {
         id: "rice-face-wax",
         name: "【全顔WAX】ライスフェイスワックス脱毛＋ヒト幹細胞フェイシャルパック",
+        description: "お米の成分で肌に優しく産毛を除去。ヒト幹細胞パックで潤いと透明感をプラス。",
         price: 6600,
+        originalPrice: 8800,
       },
       {
         id: "super-food-wax",
-        name: "【全顔WAX】スーパーフードフェイシャルワックス＋ヒト幹細胞パック",
+        name: "【全顔WAX】スーパーフードフェイスワックス＋ヒト幹細胞パック",
+        description: "5つの美容成分（アサイー・カカオ・ココナッツ等）配合のワックスで、脱毛しながらエイジングケア。",
         price: 7700,
+        originalPrice: 9900,
       },
       {
-        id: "shaving-graduation-2",
-        name: "シェービング卒業！2回分【全顔】ライスフェイスワックス+ヒト幹細胞パック",
+        id: "shaving-graduation-rice-2",
+        name: "シェービング卒業！2回分【全顔】ライスフェイスワックス＋ヒト幹細胞パック",
+        description: "シェービングからワックス脱毛へ切り替えたい方におすすめの2回セット。",
         price: 13200,
+        originalPrice: 17600,
+      },
+      {
+        id: "shaving-graduation-super-2",
+        name: "シェービング卒業！2回分【全顔】スーパーフードフェイスワックス＋ヒト幹細胞パック",
+        description: "スーパーフードワックスで贅沢にシェービング卒業。2回分のお得なセット。",
+        price: 15400,
+        originalPrice: 18800,
       },
       {
         id: "rice-unaji-set",
-        name: "全顔ライスフェイスワックス＋うなじ襟足ワックス脱毛＋パック",
+        name: "【お顔セット】全顔ライスフェイスワックス＋うなじ襟足＋パック",
+        description: "全顔とうなじ襟足をまとめてケア。首元まで美しく整えます。",
         price: 8800,
         originalPrice: 12100,
       },
       {
         id: "super-unaji-set",
-        name: "全顔スーパーフードフェイシャルワックス+うなじ襟足+パック",
+        name: "【お顔セット】全顔スーパーフードフェイスワックス＋うなじ襟足＋パック",
+        description: "スーパーフードワックスで全顔とうなじ襟足をトータルケア。",
         price: 9900,
         originalPrice: 13200,
-      },
-      {
-        id: "rice-stem-cell",
-        name: "【全顔WAX】ライスフェイスワックス脱毛+ヒト幹細胞導入",
-        price: 11000,
-      },
-      {
-        id: "super-stem-cell",
-        name: "【全顔WAX】スーパーフードフェイシャルワックス+ヒト幹細胞導入",
-        price: 13200,
-      },
-      {
-        id: "premium-set",
-        name: "【プレミアム】全顔WAX+うなじ襟足+ヒト幹細胞導入+パック",
-        price: 17600,
-      },
-      {
-        id: "shaving-graduation-5",
-        name: "シェービング卒業！5回分【全顔】ライスフェイスワックス+ヒト幹細胞パック",
-        price: 27500,
-        originalPrice: 33000,
-      },
-      {
-        id: "shaving-graduation-10",
-        name: "シェービング卒業！10回分【全顔】ライスフェイスワックス+ヒト幹細胞パック",
-        price: 49500,
-        originalPrice: 66000,
-      },
-      {
-        id: "super-5-times",
-        name: "【5回券】スーパーフードフェイシャルワックス+ヒト幹細胞パック",
-        price: 33000,
-        originalPrice: 38500,
-      },
-      {
-        id: "super-10-times",
-        name: "【10回券】スーパーフードフェイシャルワックス+ヒト幹細胞パック",
-        price: 63700,
-        originalPrice: 77000,
-      },
-      {
-        id: "premium-5-times",
-        name: "【5回券】プレミアム全顔WAX+うなじ襟足+導入+パック",
-        price: 79200,
-        originalPrice: 88000,
-      },
-      {
-        id: "premium-10-times",
-        name: "【10回券】プレミアム全顔WAX+うなじ襟足+導入+パック",
-        price: 140800,
-        originalPrice: 176000,
       },
     ],
   },
   {
     id: "all-customer",
-    name: "全員",
+    name: "全員（再来・回数券）",
     items: [
       {
-        id: "weekday-student",
-        name: "【平日限定口コミ学割】ライスフェイスワックス脱毛+パック付き",
-        price: 5500,
-        originalPrice: 8800,
+        id: "rice-repeat",
+        name: "【全顔WAX】ライスフェイスワックス＋ヒト幹細胞パック",
+        description: "お米の成分で肌に優しく産毛を除去。リピーター様向けの通常メニュー。",
+        price: 8800,
       },
       {
-        id: "unaji-wax",
-        name: "【両うなじ襟足】大人気♪うなじ襟足ワックス脱毛",
-        price: 3300,
+        id: "super-repeat",
+        name: "【全顔WAX】スーパーフードフェイスワックス＋ヒト幹細胞パック",
+        description: "5つの美容成分配合のワックスで、脱毛しながらエイジングケア。",
+        price: 9900,
       },
       {
-        id: "eyebrow-wax",
-        name: "【眉WAX】眉ワックス脱毛",
-        price: 3850,
+        id: "rice-unaji-repeat",
+        name: "【全顔WAX】ライスフェイスワックス＋うなじ襟足＋パック",
+        description: "全顔とうなじ襟足をまとめてケアするお得なセットメニュー。",
+        price: 11000,
+        originalPrice: 12100,
       },
       {
-        id: "nose-wax",
-        name: "【鼻WAX】鼻ワックス",
-        price: 1100,
+        id: "super-3-ticket",
+        name: "【3回券】スーパーフードフェイスワックス＋パック",
+        description: "スーパーフードワックス3回分のお得な回数券。継続ケアにおすすめ。",
+        price: 26730,
+        originalPrice: 29700,
       },
       {
-        id: "lip-wax",
-        name: "【口周りWAX】口周りワックス脱毛",
-        price: 2200,
+        id: "rice-6-ticket",
+        name: "【6回券】ライスフェイスワックス＋パック",
+        description: "ライスワックス6回分の回数券。約3ヶ月〜半年分のケアに。",
+        price: 44880,
+        originalPrice: 52800,
       },
       {
-        id: "forehead-wax",
-        name: "【額WAX】額ワックス脱毛",
-        price: 2200,
+        id: "super-6-ticket",
+        name: "【6回券】スーパーフードフェイスワックス＋パック",
+        description: "スーパーフードワックス6回分の回数券。エイジングケアを継続したい方に。",
+        price: 50490,
+        originalPrice: 59400,
       },
       {
-        id: "cheek-wax",
-        name: "【頬WAX】頬ワックス脱毛",
-        price: 2200,
+        id: "rice-10-ticket",
+        name: "【10回券】ライスフェイスワックス＋パック",
+        description: "ライスワックス10回分の最もお得な回数券。長期継続ケアに最適。",
+        price: 70400,
+        originalPrice: 88000,
       },
       {
-        id: "chin-wax",
-        name: "【顎WAX】顎ワックス脱毛",
-        price: 2200,
-      },
-      {
-        id: "faceline-wax",
-        name: "【フェイスラインWAX】フェイスラインワックス脱毛",
-        price: 2200,
-      },
-      {
-        id: "stem-cell-only",
-        name: "【単品】ヒト幹細胞導入",
-        price: 4400,
-      },
-      {
-        id: "pack-only",
-        name: "【単品】ヒト幹細胞フェイシャルパック",
-        price: 2200,
-      },
-      {
-        id: "unaji-repeat",
-        name: "【リピーター様】うなじ襟足ワックス脱毛",
-        price: 2750,
+        id: "super-10-ticket",
+        name: "【10回券】スーパーフードフェイスワックス＋パック",
+        description: "スーパーフードワックス10回分の最もお得な回数券。本格エイジングケアに。",
+        price: 79200,
+        originalPrice: 99000,
       },
     ],
   },
 ];
 
 export const formatPrice = (price: number): string => {
-  if (price === 0) return "¥0";
-  return `¥${price.toLocaleString()}`;
+  if (price === 0) return "¥0（税込）";
+  return `¥${price.toLocaleString()}（税込）`;
 };

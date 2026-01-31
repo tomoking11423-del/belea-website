@@ -70,12 +70,17 @@ export default function Menu({ hotpepperUrl }: MenuProps) {
                   <h4 className="font-medium text-[#4A4A4A] leading-relaxed">
                     {item.name}
                   </h4>
+                  {item.description && (
+                    <p className="text-xs text-[#6B6B6B] mt-1 leading-relaxed">
+                      {item.description}
+                    </p>
+                  )}
                 </div>
                 <div className="text-right shrink-0">
                   {item.originalPrice && (
-                    <span className="text-sm text-[#999] line-through mr-2">
-                      ¥{item.originalPrice.toLocaleString()}
-                    </span>
+                    <div className="text-xs text-[#999] line-through mb-1">
+                      通常 ¥{item.originalPrice.toLocaleString()}
+                    </div>
                   )}
                   <span className="text-lg font-bold text-[#C9A962]">
                     {formatPrice(item.price)}
