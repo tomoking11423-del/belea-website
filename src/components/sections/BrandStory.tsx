@@ -114,6 +114,11 @@ export default function BrandStory() {
 
                 <p>お客様の大切な時間を縛られず、有意義に過ごしていただくために。</p>
 
+                <p>
+                  <span className="text-[#C9A962] font-medium">【時短】</span>
+                  はただ早くするのではなく、技術はもちろんのこと、無駄な時間を省きながらお客様に満足していただくということです。
+                </p>
+
                 <p className="text-center py-4">
                   <span className="block text-[#4A4A4A]">お肌の土台を創る。</span>
                   <span
