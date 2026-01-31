@@ -103,7 +103,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={handleMobileMenuClick}
-              className="block px-6 py-4 text-[#4A4A4A] hover:bg-[#FFFBF5] hover:text-[#C9A962] transition-colors border-b border-gray-100"
+              className="block px-6 py-4 text-[#4A4A4A] hover:bg-[#F5F2ED] hover:text-[#C9A962] transition-colors border-b border-gray-100"
             >
               {item.label}
             </a>

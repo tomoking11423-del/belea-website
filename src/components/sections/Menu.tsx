@@ -33,7 +33,7 @@ export default function Menu({ hotpepperUrl }: MenuProps) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex justify-center mb-8"
         >
-          <div className="inline-flex bg-[#FFFBF5] rounded-lg p-1">
+          <div className="inline-flex bg-[#F5F2ED] rounded-lg p-1">
             {menuCategories.map((category, index) => (
               <button
                 key={category.id}
@@ -56,7 +56,7 @@ export default function Menu({ hotpepperUrl }: MenuProps) {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="bg-[#FFFBF5] rounded-lg overflow-hidden">
+          <div className="bg-[#F5F2ED] rounded-lg overflow-hidden">
             {menuCategories[activeTab].items.map((item, itemIndex) => (
               <div
                 key={item.id}

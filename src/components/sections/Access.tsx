@@ -13,7 +13,7 @@ export default function Access() {
   const store = stores[0]; // Current single store
 
   return (
-    <section id="access" className="py-20 md:py-28 bg-[#FFF8F0]">
+    <section id="access" className="py-20 md:py-28 bg-[#F5F2ED]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

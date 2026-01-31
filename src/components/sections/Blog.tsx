@@ -15,7 +15,7 @@ export default function Blog({ blogUrl }: BlogProps) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="blog" className="py-20 md:py-28 bg-[#FFFBF5]">
+    <section id="blog" className="py-20 md:py-28 bg-[#F5F2ED]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

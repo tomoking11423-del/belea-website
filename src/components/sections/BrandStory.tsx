@@ -10,7 +10,7 @@ export default function BrandStory() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-16 md:py-24 bg-[#FFFBF5]">
+    <section className="py-16 md:py-24 bg-[#F5F2ED]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6" ref={ref}>
 
         {/* Title */}

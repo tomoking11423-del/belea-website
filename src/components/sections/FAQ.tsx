@@ -20,7 +20,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-[#FFF8F0]">
+    <section id="faq" className="py-20 md:py-28 bg-[#F5F2ED]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function FAQ() {
               {/* Question */}
               <button
                 onClick={() => toggleItem(item.id)}
-                className="w-full flex items-center justify-between p-5 text-left hover:bg-[#FFFBF5] transition-colors"
+                className="w-full flex items-center justify-between p-5 text-left hover:bg-[#F5F2ED] transition-colors"
               >
                 <span className="flex items-center gap-3">
                   <span className="text-[#C9A962] font-bold">Q.</span>
