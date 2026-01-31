@@ -10,27 +10,27 @@ const effects = [
   {
     number: "01",
     title: "産毛除去",
-    description: "細かい産毛まで根元からオフ。\n肌表面がなめらかに。",
+    description: "細かい産毛まで\n根元からオフ。\n肌表面がなめらかに。",
   },
   {
     number: "02",
     title: "角質除去",
-    description: "古い角質も一緒にすっきり。\nターンオーバーを促進。",
+    description: "古い角質も一緒に\nすっきりオフ。\nターンオーバーを促進。",
   },
   {
     number: "03",
     title: "トーンアップ",
-    description: "肌が明るく、透明感アップ。\n化粧ノリも改善。",
+    description: "肌が明るく\n透明感アップ。\n化粧ノリも改善。",
   },
   {
     number: "04",
     title: "皮脂・汚れ除去",
-    description: "余分な皮脂や汚れをオフ。\n毛穴の黒ずみ改善に。",
+    description: "余分な皮脂や\n汚れをオフ。\n毛穴の黒ずみ改善。",
   },
   {
     number: "05",
     title: "顔ダニ除去",
-    description: "増えすぎた顔ダニをオフ。\n肌荒れの原因を改善。",
+    description: "増えすぎた\n顔ダニをオフ。\n肌荒れ原因を改善。",
   },
 ];
 
