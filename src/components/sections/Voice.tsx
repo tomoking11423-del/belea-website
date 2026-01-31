@@ -39,7 +39,7 @@ export default function Voice({ hotpepperUrl }: VoiceProps) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="voice" className="py-20 md:py-28 bg-[#F9F9F7]">
+    <section id="voice" className="py-20 md:py-28 bg-[#FFFBF5]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

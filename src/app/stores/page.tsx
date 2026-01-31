@@ -19,7 +19,7 @@ export default function StoresPage() {
     <>
       <Header />
       <main className="pt-[70px]">
-        <section className="py-20 md:py-28 bg-[#F9F9F7]">
+        <section className="py-20 md:py-28 bg-[#FFFBF5]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <SectionTitle englishTitle="STORES" japaneseTitle="店舗一覧" />
 

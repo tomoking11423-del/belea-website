@@ -36,7 +36,7 @@ export default function Company() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-[#F9F9F7] rounded-lg overflow-hidden shadow-sm"
+          className="bg-[#FFFBF5] rounded-lg overflow-hidden shadow-sm"
         >
           <table className="w-full">
             <tbody>
