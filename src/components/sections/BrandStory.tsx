@@ -146,7 +146,7 @@ export default function BrandStory() {
           className="mb-16"
         >
           <p className="text-[#4A4A4A] leading-loose text-center">
-            お肌の土台を作る。
+            お肌の土台を創る。
             <br />
             <span className="text-[#C9A962] font-medium text-lg">フェイスワックスを日常へ</span>
           </p>
