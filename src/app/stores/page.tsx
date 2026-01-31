@@ -26,9 +26,9 @@ export default function StoresPage() {
             {/* Shinjuku Store */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden max-w-4xl mx-auto">
               {/* Store Header */}
-              <div className="bg-[#C9A962] text-white p-6">
+              <div className="bg-[#C9A962] text-white p-6 text-center">
                 <h3
-                  className="text-2xl mb-1"
+                  className="text-2xl font-bold mb-1"
                   style={{ fontFamily: "var(--font-cormorant), serif" }}
                 >
                   BELEA 新宿店
