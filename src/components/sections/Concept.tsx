@@ -69,15 +69,27 @@ export default function Concept() {
             >
               ただの産毛処理ではありません。
             </h3>
-            <div className="space-y-4 text-[#6B6B6B] leading-relaxed">
+            <div className="space-y-6 text-[#6B6B6B] leading-loose">
               <p>
-                フェイスワックスは、産毛を除去するだけでなく、古い角質を一緒に取り除き、
-                <span className="text-[#C9A962] font-medium">肌の土台から整えるトリートメント</span>
-                です。
+                フェイスワックスは、
+                <br />
+                産毛を除去するだけでなく、
+                <br />
+                古い角質を一緒に取り除き、
+                <br />
+                <span className="text-[#C9A962] font-medium">肌の土台から整えるトリートメント</span>です。
               </p>
               <p>
-                化粧ノリの改善、くすみ解消、スキンケアの浸透力アップ。
-                「肌の土台作り」として、多くのお客様にご好評いただいています。
+                化粧ノリの改善、
+                <br />
+                くすみ解消、
+                <br />
+                スキンケアの浸透力アップ。
+              </p>
+              <p>
+                「肌の土台作り」として、
+                <br />
+                多くのお客様にご好評いただいています。
               </p>
             </div>
           </motion.div>
