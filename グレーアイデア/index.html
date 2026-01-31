@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BELEA - フェイスワックス専門店</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-darkest: #faf8f5;
+            --bg-dark: #f5f2ed;
+            --bg-medium: #ebe7e0;
+            --bg-light: #e5e0d8;
+            --bg-lighter: #ddd8cf;
+            --text-primary: #2d2d2d;
+            --text-secondary: #5a5a5a;
+            --text-muted: #8a8a8a;
+            --accent-gold: #a68a5b;
+            --accent-gold-light: #c9a96e;
+            --accent-gold-dark: #8b7249;
+            --border-color: #d5cfc5;
+            --gradient-dark: linear-gradient(135deg, #f5f2ed 0%, #ebe7e0 100%);
+            --gradient-card: linear-gradient(145deg, #ffffff 0%, #f5f2ed 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-darkest);
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ========== Navigation ========== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 5%;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: 0.3s;
+        }
+
+        /* ========== Hero Section ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 5% 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(166, 138, 91, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(166, 138, 91, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 0.4em;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            letter-spacing: 0.1em;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border-radius: 0;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--bg-darkest);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(166, 138, 91, 0.25);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        /* ========== Section Styles ========== */
+        section {
+            padding: 120px 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ========== Problems Section ========== */
+        .problems {
+            background: var(--bg-dark);
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .problem-item {
+            background: var(--gradient-card);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+        }
+
+        .problem-item:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .problem-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .solution-box {
+            background: var(--bg-medium);
+            border: 2px solid var(--accent-gold);
+            padding: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .solution-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+        }
+
+        /* ========== Concept Section ========== */
+        .concept {
+            background: var(--bg-darkest);
+        }
+
+        .concept-content {
+            max-width: 900px;
+            margin: 0 auto 5rem;
+            text-align: center;
+        }
+
+        .concept-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 2.2;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--gradient-card);
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--accent-gold);
+            opacity: 0.5;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ========== Menu Section ========== */
+        .menu {
+            background: var(--bg-dark);
+        }
+
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 3rem;
+        }
+
+        .menu-table th,
+        .menu-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .menu-table th {
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            background: var(--bg-medium);
+        }
+
+        .menu-table tr:hover {
+            background: var(--bg-medium);
+        }
+
+        .menu-name {
+            font-weight: 400;
+        }
+
+        .price-regular {
+            color: var(--text-muted);
+        }
+
+        .price-first {
+            color: var(--accent-gold);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .free-badge {
+            background: var(--accent-gold);
+            color: var(--bg-darkest);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* ========== Flow Section ========== */
+        .flow {
+            background: var(--bg-darkest);
+        }
+
+        .flow-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .flow-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: var(--border-color);
+            z-index: 0;
+        }
+
+        .flow-step {
+            flex: 1;
+            min-width: 180px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-medium);
+            border: 2px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .flow-step h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .flow-step p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ========== Reviews Section ========== */
+        .reviews {
+            background: var(--bg-dark);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--gradient-card);
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            color: var(--accent-gold);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            line-height: 2;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .review-author {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+
+        /* ========== FAQ Section ========== */
+        .faq {
+            background: var(--bg-darkest);
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 2rem 0;
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--accent-gold);
+        }
+
+        .faq-q {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .faq-question h4 {
+            font-weight: 400;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            padding-left: 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 2;
+        }
+
+        /* ========== Company Section ========== */
+        .company {
+            background: var(--bg-dark);
+        }
+
+        .company-info {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .info-row {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .info-label {
+            width: 200px;
+            flex-shrink: 0;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+
+        .info-value {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ========== Access Section ========== */
+        .access {
+            background: var(--bg-darkest);
+        }
+
+        .access-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .access-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .access-detail {
+            margin-bottom: 1.5rem;
+        }
+
+        .access-detail-label {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .access-detail-value {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .map-container {
+            background: var(--bg-medium);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-placeholder {
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* ========== CTA Section ========== */
+        .cta {
+            background: var(--gradient-dark);
+            text-align: center;
+            padding: 100px 5%;
+            position: relative;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(166, 138, 91, 0.08) 0%, transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ========== Footer ========== */
+        footer {
+            background: var(--bg-darkest);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 5% 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-links h4 {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .access-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+            .hero {
+                padding: 100px 5% 60px;
+            }
+
+            .flow-steps::before {
+                display: none;
+            }
+
+            .flow-steps {
+                flex-direction: column;
+            }
+
+            .info-row {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .info-label {
+                width: 100%;
+            }
+
+            .menu-table {
+                font-size: 0.85rem;
+            }
+
+            .menu-table th,
+            .menu-table td {
+                padding: 1rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">BELEA</div>
+            <ul class="nav-links">
+                <li><a href="#concept">コンセプト</a></li>
+                <li><a href="#menu">メニュー</a></li>
+                <li><a href="#reviews">お客様の声</a></li>
+                <li><a href="#faq">よくある質問</a></li>
+                <li><a href="#company">会社概要</a></li>
+                <li><a href="#access">アクセス</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">FACE WAX SALON</p>
+            <h1>BELEA</h1>
+            <p class="hero-tagline">素肌が変わる、自分が変わる。</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">ホットペッパーで予約</a>
+                <a href="#" class="btn btn-secondary">LINEで相談・予約</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">PROBLEMS</p>
+                <h2 class="section-title">こんなお悩みありませんか？</h2>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-item">
+                    <p>メイクノリが悪い<br>崩れやすい</p>
+                </div>
+                <div class="problem-item">
+                    <p>繰り返しニキビが<br>できやすい</p>
+                </div>
+                <div class="problem-item">
+                    <p>お肌のざらつき<br>ごわつき</p>
+                </div>
+                <div class="problem-item">
+                    <p>毛穴の黒ずみが<br>気になる</p>
+                </div>
+                <div class="problem-item">
+                    <p>肌のトーンが<br>暗くなった</p>
+                </div>
+            </div>
+            <div class="solution-box">
+                <h3>その悩み、フェイスワックスで解決できます</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section id="concept" class="concept">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">CONCEPT</p>
+                <h2 class="section-title">フェイスワックスとは</h2>
+            </div>
+            <div class="concept-content">
+                <p class="concept-text">
+                    ただの産毛処理ではありません。<br>
+                    フェイスワックスは、産毛を除去するだけでなく、<br>
+                    古い角質を一緒に取り除き、肌の土台から整えるトリートメントです。
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">01</div>
+                    <h4>産毛除去</h4>
+                    <p>細かい産毛まで根元からオフ</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">02</div>
+                    <h4>角質除去</h4>
+                    <p>古い角質もすっきり、ターンオーバー促進</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">03</div>
+                    <h4>トーンアップ</h4>
+                    <p>肌が明るく透明感アップ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">MENU</p>
+                <h2 class="section-title">メニュー・料金</h2>
+            </div>
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>メニュー</th>
+                        <th>通常価格</th>
+                        <th>初回価格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="menu-name">カウンセリング</td>
+                        <td class="price-regular">—</td>
+                        <td><span class="free-badge">無料</span></td>
+                    </tr>
+                    <tr>
+                        <td class="menu-name">ライスフェイスワックス＋ヒト幹細胞パック</td>
+                        <td class="price-regular">¥8,800</td>
+                        <td class="price-first">¥6,600</td>
+                    </tr>
+                    <tr>
+                        <td class="menu-name">スーパーフードワックス＋パック</td>
+                        <td class="price-regular">¥9,900</td>
+                        <td class="price-first">¥7,700</td>
+                    </tr>
+                    <tr>
+                        <td class="menu-name">ライス2回セット</td>
+                        <td class="price-regular">¥17,600</td>
+                        <td class="price-first">¥13,200</td>
+                    </tr>
+                    <tr>
+                        <td class="menu-name">スーパーフード2回セット</td>
+                        <td class="price-regular">¥18,800</td>
+                        <td class="price-first">¥15,400</td>
+                    </tr>
+                    <tr>
+                        <td class="menu-name">全顔＋うなじ襟足（ライス）</td>
+                        <td class="price-regular">¥12,100</td>
+                        <td class="price-first">¥8,800</td>
+                    </tr>
+                    <tr>
+                        <td class="menu-name">全顔＋うなじ襟足（スーパーフード）</td>
+                        <td class="price-regular">¥13,200</td>
+                        <td class="price-first">¥9,900</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Flow Section -->
+    <section id="flow" class="flow">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">FLOW</p>
+                <h2 class="section-title">ご利用の流れ</h2>
+            </div>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="step-number">01</div>
+                    <h4>ご予約</h4>
+                    <p>ホットペッパーまたは<br>LINEで予約</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">02</div>
+                    <h4>ご来店</h4>
+                    <p>予約時間5分前までに<br>到着</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">03</div>
+                    <h4>カウンセリング</h4>
+                    <p>肌状態確認・<br>施術説明</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">04</div>
+                    <h4>施術</h4>
+                    <p>リラックスして<br>受診</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">05</div>
+                    <h4>お会計・次回予約</h4>
+                    <p>次回予約も<br>受け付け</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">VOICE</p>
+                <h2 class="section-title">お客様の声</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <p class="review-text">初めてのフェイスワックスでしたが、痛みも少なく、施術後の肌のツルツル感に感動しました！化粧ノリが全然違います。</p>
+                    <p class="review-author">30代 女性</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">男性でも入りやすい雰囲気で安心しました。肌のトーンが明るくなり、清潔感がアップした気がします。リピート確定です。</p>
+                    <p class="review-author">20代 男性</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">くすみが気になっていましたが、1回の施術で肌が明るくなりました。定期的に通いたいと思います。スタッフさんも丁寧でした。</p>
+                    <p class="review-author">40代 女性</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-title">よくある質問</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h4>痛みはありますか？</h4>
+                    </div>
+                    <div class="faq-answer">
+                        個人差はありますが、「思ったより痛くなかった」とおっしゃる方がほとんどです。専門店ならではの技術で痛みを最小限に抑えております。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h4>施術時間はどのくらいですか？</h4>
+                    </div>
+                    <div class="faq-answer">
+                        全顔で約60分、部分施術で20〜30分程度です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h4>敏感肌でも大丈夫ですか？</h4>
+                    </div>
+                    <div class="faq-answer">
+                        カウンセリングでお肌の状態を確認させていただき、判断いたします。通常は施術可能ですが、肌荒れがひどい場合はご相談ください。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h4>男性でも利用できますか？</h4>
+                    </div>
+                    <div class="faq-answer">
+                        はい、男性のお客様も大歓迎です。男性向けの落ち着いた雰囲気でお迎えいたします。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h4>どのくらいの頻度で通えばいいですか？</h4>
+                    </div>
+                    <div class="faq-answer">
+                        3〜4週間に1回のペースをおすすめしております。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h4>施術後にメイクはできますか？</h4>
+                    </div>
+                    <div class="faq-answer">
+                        翌日以降を推奨しております。軽いメイクについてはスタッフにご相談ください。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-q">Q</span>
+                        <h4>事前に準備することはありますか？</h4>
+                    </div>
+                    <div class="faq-answer">
+                        保湿を重視してお過ごしください。当日のクレンジングは店舗で対応いたします。前日の過度な日焼けはお避けください。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Section -->
+    <section id="company" class="company">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">COMPANY</p>
+                <h2 class="section-title">会社概要</h2>
+            </div>
+            <div class="company-info">
+                <div class="info-row">
+                    <div class="info-label">会社名</div>
+                    <div class="info-value">株式会社MaVie</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">代表者</div>
+                    <div class="info-value">代表取締役 金剛寺舞</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">設立</div>
+                    <div class="info-value">2021年11月1日</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">所在地</div>
+                    <div class="info-value">〒160-0023 東京都新宿区西新宿7-6-5 グローリア初穂生沼801</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">営業時間</div>
+                    <div class="info-value">平日 11:00〜20:00 ／ 土日祝 10:00〜19:00</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">定休日</div>
+                    <div class="info-value">不定休</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Access Section -->
+    <section id="access" class="access">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">ACCESS</p>
+                <h2 class="section-title">アクセス</h2>
+            </div>
+            <div class="access-content">
+                <div class="access-info">
+                    <h3>BELEA 新宿店</h3>
+                    <div class="access-detail">
+                        <p class="access-detail-label">住所</p>
+                        <p class="access-detail-value">〒160-0023<br>東京都新宿区西新宿7-6-5<br>グローリア初穂生沼801</p>
+                    </div>
+                    <div class="access-detail">
+                        <p class="access-detail-label">最寄り駅</p>
+                        <p class="access-detail-value">JR新宿駅西口より徒歩5分<br>西武新宿駅より徒歩3分</p>
+                    </div>
+                    <div class="access-detail">
+                        <p class="access-detail-label">営業時間</p>
+                        <p class="access-detail-value">平日 11:00〜20:00<br>土日祝 10:00〜19:00</p>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <p>Google Map</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">東京都新宿区西新宿7-6-5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>ご予約・お問い合わせ</h2>
+            <p class="section-desc" style="margin-bottom: 2rem;">お気軽にご相談ください</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">ホットペッパーで予約</a>
+                <a href="#" class="btn btn-secondary">LINEで相談・予約</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">BELEA</div>
+                <p>フェイスワックス専門店</p>
+            </div>
+            <div class="footer-links">
+                <h4>MENU</h4>
+                <ul>
+                    <li><a href="#concept">コンセプト</a></li>
+                    <li><a href="#menu">メニュー</a></li>
+                    <li><a href="#reviews">お客様の声</a></li>
+                    <li><a href="#faq">よくある質問</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>INFO</h4>
+                <ul>
+                    <li><a href="#company">会社概要</a></li>
+                    <li><a href="#access">アクセス</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>FOLLOW US</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">IG</a>
+                    <a href="#" class="social-link">LINE</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 BELEA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

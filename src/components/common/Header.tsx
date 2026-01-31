@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const navItems = [
-  { label: "コンセプト", href: "/concept" },
-  { label: "メニュー", href: "/menu" },
+  { label: "BELEA", href: "/concept" },
+  { label: "料金・メニュー", href: "/menu" },
   { label: "お客様の声", href: "/voice" },
   { label: "よくある質問", href: "/faq" },
+  { label: "店舗一覧", href: "/stores" },
   { label: "会社概要", href: "/company" },
-  { label: "アクセス", href: "/access" },
 ];
 
 export default function Header() {
