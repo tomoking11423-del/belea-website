@@ -33,7 +33,7 @@ export default function BrandStory() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <div className="relative py-12">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 bg-[#C9A962]/30"></div>
@@ -41,14 +41,12 @@ export default function BrandStory() {
               className="text-2xl md:text-3xl text-[#4A4A4A] leading-relaxed mb-6"
               style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
             >
-              通うたび、
+              通うたび
               <br />
               <span className="text-[#C9A962]">心のトーンも一段上がる。</span>
             </p>
             <p className="text-[#6B6B6B] leading-relaxed">
-              をモットーに、
-              <br />
-              全ての人へhappyを届けるサロンでありたいと思っています。
+              をモットーに全ての人へhappyを届けるサロンでありたいと思っています。
             </p>
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-8 bg-[#C9A962]/30"></div>
           </div>
@@ -62,20 +60,15 @@ export default function BrandStory() {
           className="mb-16"
         >
           <p className="text-[#4A4A4A] leading-loose text-center">
-            BELEAを通して、
-            <br className="md:hidden" />
-            老若男女問わず美を追求し、
+            BELEAを通して老若男女問わず美を追求し、
             <br />
-            なりたい自分へ近づくため、
-            <br className="md:hidden" />
+            なりたい自分へ近づく為
+            <br />
             お肌本来の美しさを手に入れ、
             <br />
             <span className="text-[#C9A962] font-medium">喜びや幸福を感じて欲しい。</span>
             <br />
-            <br />
-            という願いを込めて、
-            <br className="md:hidden" />
-            BELEAと名付けました。
+            という願いを込めてBELEAを付けました。
           </p>
         </motion.div>
 
@@ -97,15 +90,27 @@ export default function BrandStory() {
           className="mb-16"
         >
           <p className="text-[#4A4A4A] leading-loose text-center">
-            私たちスタッフ一同は、
+            私達スタッフ一同は、
             <br />
             日々お客様への美のサポートを追求し、
             <br />
-            <span className="text-[#C9A962] font-medium">【時短】</span>かつ<span className="text-[#C9A962] font-medium">【満足度】</span>を
+            <span className="text-[#C9A962] font-medium">【時短】</span>且つ<span className="text-[#C9A962] font-medium">【満足度】</span>を
             <br />
-            どこよりも意識し、
+            どこよりも意識し技術やカウンセリングを学んでおります。
+          </p>
+        </motion.div>
+
+        {/* Customer Time */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="mb-16"
+        >
+          <p className="text-[#4A4A4A] leading-loose text-center">
+            お客様の大切な時間を縛られず
             <br />
-            技術やカウンセリングを学んでおります。
+            有意義に過ごしていただくために。
           </p>
         </motion.div>
 
@@ -129,7 +134,21 @@ export default function BrandStory() {
             <br />
             無駄な時間を省きながら
             <br />
-            お客様に満足していただくこと。
+            お客様に満足していただくということです。
+          </p>
+        </motion.div>
+
+        {/* Face Wax Message */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.55 }}
+          className="mb-16"
+        >
+          <p className="text-[#4A4A4A] leading-loose text-center">
+            お肌の土台を作る？造る？創る？笑
+            <br />
+            <span className="text-[#C9A962] font-medium text-lg">フェイスワックスを日常へ</span>
           </p>
         </motion.div>
 
@@ -144,10 +163,10 @@ export default function BrandStory() {
             className="text-lg text-[#4A4A4A] mb-4"
             style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
           >
-            是非一度ご来店ください。
+            是非一度BELEAへご来店下さい。
           </p>
           <p className="text-[#C9A962] font-medium">
-            スタッフ一同、心よりお待ちしております。
+            スタッフ一同心よりお待ちしております。
           </p>
         </motion.div>
 
