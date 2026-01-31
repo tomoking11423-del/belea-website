@@ -91,6 +91,16 @@ export default function Access() {
               <div className="flex items-start gap-3">
                 <HiPhone className="w-5 h-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
                 <div>
+                  <p className="text-sm text-[#6B6B6B]">電話番号</p>
+                  <a href="tel:03-5358-9225" className="text-[#4A4A4A] hover:text-[#C9A962] transition-colors">
+                    03-5358-9225
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-5 h-5 flex-shrink-0 mt-0.5"></div>
+                <div>
                   <p className="text-sm text-[#6B6B6B]">定休日</p>
                   <p className="text-[#4A4A4A]">{store.holidays}</p>
                 </div>

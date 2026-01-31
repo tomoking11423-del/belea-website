@@ -18,6 +18,14 @@ export default function Footer() {
           {/* Tagline */}
           <p className="text-sm text-gray-300">Face Wax Salon</p>
 
+          {/* Contact Info */}
+          <div className="text-center text-sm text-gray-300">
+            <p>〒160-0023 新宿区西新宿7-6-5 グローリア初穂生沼801</p>
+            <a href="tel:03-5358-9225" className="hover:text-[#C9A962] transition-colors">
+              TEL: 03-5358-9225
+            </a>
+          </div>
+
           {/* Social Links */}
           <div className="flex gap-4">
             <a
