@@ -127,6 +127,24 @@ export const menuCategories: MenuCategory[] = [
       },
     ],
   },
+  {
+    id: "options",
+    name: "オプション",
+    items: [
+      {
+        id: "option-1100",
+        name: "指毛 / 鼻毛 / フェイスライン下 / クイック眉毛下",
+        description: "各部位1箇所あたりの料金です。",
+        price: 1100,
+      },
+      {
+        id: "option-2200",
+        name: "手の甲 / 耳毛",
+        description: "各部位1箇所あたりの料金です。",
+        price: 2200,
+      },
+    ],
+  },
 ];
 
 export const formatPrice = (price: number): string => {
