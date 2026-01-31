@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import FixedCTA from "@/components/common/FixedCTA";
@@ -7,7 +8,6 @@ import { HiLocationMarker, HiClock, HiPhone } from "react-icons/hi";
 
 const HOTPEPPER_URL = "https://beauty.hotpepper.jp/kr/slnH000711699/?cstt=1";
 const LINE_URL = "https://lin.ee/DXNpijD";
-const GOOGLE_MAP_URL = "https://maps.app.goo.gl/fhhJuMoWJBU5KQEC7";
 
 export const metadata: Metadata = {
   title: "店舗一覧 | フェイスワックス専門店 BELEA",
@@ -37,17 +37,15 @@ export default function StoresPage() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-0">
-                {/* Google Map */}
-                <div className="aspect-[4/3] md:aspect-auto">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.3!2d139.6965!3d35.6945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd57b87fb99%3A0x3e9e36a6d3d0f4b4!2z5p2x5Lqs6YO95paw5a6_5Yy66KW_5paw5a6_77yX5LiB55uu77yW4oiS77yV!5e0!3m2!1sja!2sjp!4v1234567890"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0, minHeight: "300px" }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
+                {/* Store Image */}
+                <div className="aspect-[4/3] md:aspect-auto relative">
+                  <Image
+                    src="/images/stores/shinjuku.jpg"
+                    alt="BELEA 新宿店 店内"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
 
                 {/* Store Info */}
@@ -91,12 +89,12 @@ export default function StoresPage() {
                   {/* Buttons */}
                   <div className="mt-8 space-y-3">
                     <a
-                      href={GOOGLE_MAP_URL}
+                      href={LINE_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full text-center py-3 border-2 border-[#C9A962] text-[#C9A962] rounded hover:bg-[#C9A962] hover:text-white transition-colors font-medium"
+                      className="block w-full text-center py-3 border-2 border-[#06C755] text-[#06C755] rounded hover:bg-[#06C755] hover:text-white transition-colors font-medium"
                     >
-                      Googleマップで見る
+                      LINEで問い合わせ
                     </a>
                     <a
                       href={HOTPEPPER_URL}
