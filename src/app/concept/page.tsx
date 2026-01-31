@@ -8,8 +8,8 @@ const HOTPEPPER_URL = "https://beauty.hotpepper.jp/kr/slnH000711699/?cstt=1";
 const LINE_URL = "https://lin.ee/DXNpijD";
 
 export const metadata: Metadata = {
-  title: "BELEAの想い | フェイスワックス専門店 BELEA",
-  description: "通うたび、心のトーンも一段上がる。全ての人へhappyを届けるサロン、BELEAの想いをご紹介します。",
+  title: "創業者メッセージ | フェイスワックス専門店 BELEA",
+  description: "通うたび、心のトーンも一段上がる。全ての人へhappyを届けるサロン、BELEA創業者からのメッセージをご紹介します。",
 };
 
 export default function ConceptPage() {

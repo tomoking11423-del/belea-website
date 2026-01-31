@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function BrandStory() {
   const ref = useRef(null);
@@ -10,7 +11,7 @@ export default function BrandStory() {
 
   return (
     <section className="py-20 md:py-28 bg-gradient-to-b from-white to-[#F9F9F7]">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6" ref={ref}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6" ref={ref}>
 
         {/* Title */}
         <motion.div
@@ -23,151 +24,102 @@ export default function BrandStory() {
             className="text-3xl md:text-4xl text-[#C9A962] tracking-widest mb-4"
             style={{ fontFamily: "var(--font-cormorant), serif" }}
           >
-            BRAND STORY
+            FOUNDER MESSAGE
           </h1>
-          <p className="text-lg text-[#4A4A4A]">BELEAの想い</p>
+          <p className="text-lg text-[#4A4A4A]">創業者メッセージ</p>
         </motion.div>
 
-        {/* Motto - Main Visual */}
+        {/* Founder Section - Image Left, Text Right */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center mb-16"
+          className="grid md:grid-cols-2 gap-8 md:gap-12 items-start"
         >
-          <div className="relative py-12">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 bg-[#C9A962]/30"></div>
-            <p
-              className="text-2xl md:text-3xl text-[#4A4A4A] leading-relaxed mb-6"
-              style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
-            >
-              通うたび
-              <br />
-              <span className="text-[#C9A962]">心のトーンも一段上がる。</span>
-            </p>
-            <p className="text-[#6B6B6B] leading-relaxed">
+          {/* Founder Image */}
+          <div className="relative">
+            <div className="aspect-[3/4] relative rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/images/about/founder.jpg"
+                alt="BELEA 創業者 金剛寺舞"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <p className="text-[#C9A962] font-medium">株式会社MaVie 代表取締役</p>
+              <p
+                className="text-xl text-[#4A4A4A] mt-1"
+                style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
+              >
+                金剛寺 舞
+              </p>
+            </div>
+          </div>
+
+          {/* Message Content */}
+          <div className="space-y-8">
+            {/* Motto */}
+            <div className="border-l-2 border-[#C9A962] pl-6">
+              <p
+                className="text-xl md:text-2xl text-[#4A4A4A] leading-relaxed"
+                style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
+              >
+                通うたび
+                <br />
+                <span className="text-[#C9A962]">心のトーンも一段上がる。</span>
+              </p>
+            </div>
+
+            <p className="text-[#6B6B6B] leading-loose">
               をモットーに全ての人へhappyを届けるサロンでありたいと思っています。
             </p>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-8 bg-[#C9A962]/30"></div>
+
+            <p className="text-[#4A4A4A] leading-loose">
+              BELEAを通して老若男女問わず美を追求し、なりたい自分へ近づく為お肌本来の美しさを手に入れ、
+              <span className="text-[#C9A962] font-medium">喜びや幸福を感じて欲しい。</span>
+              という願いを込めてBELEAを付けました。
+            </p>
+
+            <p className="text-[#4A4A4A] leading-loose">
+              私達スタッフ一同は、日々お客様への美のサポートを追求し、
+              <span className="text-[#C9A962] font-medium">【時短】</span>且つ
+              <span className="text-[#C9A962] font-medium">【満足度】</span>
+              をどこよりも意識し技術やカウンセリングを学んでおります。
+            </p>
+
+            <p className="text-[#4A4A4A] leading-loose">
+              お客様の大切な時間を縛られず有意義に過ごしていただくために。
+            </p>
+
+            {/* Time Efficiency Box */}
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-[#E8E6E3]">
+              <h3 className="text-[#C9A962] font-medium mb-3">【 時短 】</h3>
+              <p className="text-[#4A4A4A] leading-loose text-sm">
+                ただ早くするのではなく、技術はもちろんのこと、無駄な時間を省きながらお客様に満足していただくということです。
+              </p>
+            </div>
+
+            <p className="text-[#4A4A4A] leading-loose">
+              お肌の土台を創る。
+              <br />
+              <span className="text-[#C9A962] font-medium text-lg">フェイスワックスを日常へ</span>
+            </p>
+
+            {/* Closing */}
+            <div className="pt-4 border-t border-[#E8E6E3]">
+              <p
+                className="text-[#4A4A4A]"
+                style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
+              >
+                是非一度BELEAへご来店下さい。
+              </p>
+              <p className="text-[#C9A962] font-medium mt-2">
+                スタッフ一同心よりお待ちしております。
+              </p>
+            </div>
           </div>
-        </motion.div>
-
-        {/* Brand Name Story */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-16"
-        >
-          <p className="text-[#4A4A4A] leading-loose text-center">
-            BELEAを通して老若男女問わず美を追求し、
-            <br />
-            なりたい自分へ近づく為
-            <br />
-            お肌本来の美しさを手に入れ、
-            <br />
-            <span className="text-[#C9A962] font-medium">喜びや幸福を感じて欲しい。</span>
-            <br />
-            という願いを込めてBELEAを付けました。
-          </p>
-        </motion.div>
-
-        {/* Divider */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="flex justify-center mb-16"
-        >
-          <div className="w-16 h-px bg-[#C9A962]"></div>
-        </motion.div>
-
-        {/* Staff Commitment */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mb-16"
-        >
-          <p className="text-[#4A4A4A] leading-loose text-center">
-            私達スタッフ一同は、
-            <br />
-            日々お客様への美のサポートを追求し、
-            <br />
-            <span className="text-[#C9A962] font-medium">【時短】</span>且つ<span className="text-[#C9A962] font-medium">【満足度】</span>を
-            <br />
-            どこよりも意識し技術やカウンセリングを学んでおります。
-          </p>
-        </motion.div>
-
-        {/* Customer Time */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mb-16"
-        >
-          <p className="text-[#4A4A4A] leading-loose text-center">
-            お客様の大切な時間を縛られず
-            <br />
-            有意義に過ごしていただくために。
-          </p>
-        </motion.div>
-
-        {/* Time Efficiency Box */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-[#E8E6E3] mb-16"
-        >
-          <h3
-            className="text-xl text-[#C9A962] text-center mb-6 tracking-wider"
-            style={{ fontFamily: "var(--font-cormorant), serif" }}
-          >
-            【 時短 】
-          </h3>
-          <p className="text-[#4A4A4A] leading-loose text-center">
-            ただ早くするのではなく、
-            <br />
-            技術はもちろんのこと、
-            <br />
-            無駄な時間を省きながら
-            <br />
-            お客様に満足していただくということです。
-          </p>
-        </motion.div>
-
-        {/* Face Wax Message */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.55 }}
-          className="mb-16"
-        >
-          <p className="text-[#4A4A4A] leading-loose text-center">
-            お肌の土台を創る。
-            <br />
-            <span className="text-[#C9A962] font-medium text-lg">フェイスワックスを日常へ</span>
-          </p>
-        </motion.div>
-
-        {/* Closing Message */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center"
-        >
-          <p
-            className="text-lg text-[#4A4A4A] mb-4"
-            style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
-          >
-            是非一度BELEAへご来店下さい。
-          </p>
-          <p className="text-[#C9A962] font-medium">
-            スタッフ一同心よりお待ちしております。
-          </p>
         </motion.div>
 
       </div>
