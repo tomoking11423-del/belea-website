@@ -37,27 +37,40 @@ export default function BrandStory() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-[#FFFBF5] rounded-2xl overflow-hidden shadow-lg"
         >
-          <div className="grid md:grid-cols-5">
+          <div className="flex flex-col md:flex-row">
 
             {/* Founder Image - Left Side */}
-            <div className="md:col-span-2 relative">
-              <div className="aspect-[3/4] md:aspect-auto md:h-full relative">
-                <Image
-                  src="/images/about/founder.jpg"
-                  alt="BELEA 創業者 金剛寺舞"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                />
-                {/* Overlay gradient for text readability on mobile */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:hidden"></div>
+            <div className="md:w-72 lg:w-80 flex-shrink-0">
+              <div className="relative mx-auto md:mx-0">
+                {/* Mobile: centered smaller image */}
+                <div className="md:hidden flex justify-center py-8">
+                  <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                    <Image
+                      src="/images/about/founder.jpg"
+                      alt="BELEA 創業者 金剛寺舞"
+                      width={192}
+                      height={192}
+                      className="object-cover object-top w-full h-full"
+                    />
+                  </div>
+                </div>
+                {/* Desktop: full height image */}
+                <div className="hidden md:block h-full">
+                  <Image
+                    src="/images/about/founder.jpg"
+                    alt="BELEA 創業者 金剛寺舞"
+                    width={320}
+                    height={480}
+                    className="object-cover object-top w-full h-full"
+                  />
+                </div>
               </div>
 
-              {/* Founder Name - Mobile: overlay on image, Desktop: below */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:hidden">
-                <p className="text-white/90 text-sm">株式会社MaVie 代表取締役</p>
+              {/* Founder Name - Mobile only */}
+              <div className="md:hidden text-center pb-6">
+                <p className="text-[#C9A962] text-sm">株式会社MaVie 代表取締役</p>
                 <p
-                  className="text-white text-xl mt-1"
+                  className="text-xl text-[#4A4A4A] mt-1"
                   style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
                 >
                   金剛寺 舞
@@ -66,7 +79,7 @@ export default function BrandStory() {
             </div>
 
             {/* Message Content - Right Side */}
-            <div className="md:col-span-3 p-6 md:p-10 lg:p-12">
+            <div className="flex-1 p-6 md:p-10 lg:p-12">
 
               {/* Founder Name - Desktop only */}
               <div className="hidden md:block mb-8 pb-6 border-b border-[#E8E6E3]">
