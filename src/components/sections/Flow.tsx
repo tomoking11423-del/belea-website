@@ -91,21 +91,17 @@ export default function Flow() {
 
         {/* Mobile Flow (Vertical) */}
         <div className="md:hidden">
-          <div className="relative pl-8">
-            {/* Vertical Line */}
-            <div className="absolute top-4 bottom-4 left-6 w-0.5 bg-[#C9A962]/30"></div>
-
-            {/* Steps */}
+          <div className="space-y-6">
             {flowSteps.map((step, index) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className="relative pb-8 last:pb-0"
+                className="flex items-start gap-4"
               >
                 {/* Number Badge */}
-                <div className="absolute left-[-8px] w-12 h-12 rounded-full bg-[#C9A962] text-white flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-[#C9A962] text-white flex items-center justify-center shrink-0">
                   <span
                     className="text-lg font-medium"
                     style={{ fontFamily: "var(--font-cormorant), serif" }}
@@ -115,7 +111,7 @@ export default function Flow() {
                 </div>
 
                 {/* Content */}
-                <div className="ml-12">
+                <div className="pt-2">
                   <h4 className="font-medium text-[#4A4A4A] mb-1">
                     {step.title}
                   </h4>
