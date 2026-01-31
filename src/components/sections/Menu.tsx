@@ -54,12 +54,17 @@ export default function Menu({ hotpepperUrl }: MenuProps) {
                   }`}
                 >
                   <div className="flex-1 mb-2 sm:mb-0">
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
                       <h4 className="font-medium text-[#4A4A4A]">{item.name}</h4>
                       {item.isPopular && (
                         <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#C9A962] text-white text-xs rounded">
                           <HiStar className="w-3 h-3" />
                           人気
+                        </span>
+                      )}
+                      {item.isReturning && (
+                        <span className="inline-flex items-center px-2 py-0.5 bg-[#4A4A4A] text-white text-xs rounded">
+                          リピーター様
                         </span>
                       )}
                     </div>
@@ -71,6 +76,11 @@ export default function Menu({ hotpepperUrl }: MenuProps) {
                     )}
                   </div>
                   <div className="text-right">
+                    {item.originalPrice && (
+                      <span className="text-sm text-[#999] line-through mr-2">
+                        ¥{item.originalPrice.toLocaleString()}
+                      </span>
+                    )}
                     <span className="text-lg font-bold text-[#C9A962]">
                       {formatPrice(item.price)}
                     </span>
