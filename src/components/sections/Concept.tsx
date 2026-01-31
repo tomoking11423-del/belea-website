@@ -22,6 +22,16 @@ const effects = [
     title: "トーンアップ",
     description: "肌が明るく、透明感アップ。\n化粧ノリも改善。",
   },
+  {
+    number: "04",
+    title: "皮脂・汚れ除去",
+    description: "余分な皮脂や汚れをオフ。\n毛穴の黒ずみ改善に。",
+  },
+  {
+    number: "05",
+    title: "顔ダニ除去",
+    description: "増えすぎた顔ダニをオフ。\n肌荒れの原因を改善。",
+  },
 ];
 
 export default function Concept() {
@@ -95,15 +105,15 @@ export default function Concept() {
           </motion.div>
         </div>
 
-        {/* Three Effects */}
-        <div className="grid sm:grid-cols-3 gap-6">
+        {/* Five Effects */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
           {effects.map((effect, index) => (
             <motion.div
               key={effect.number}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow text-center"
+              className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center"
             >
               <span
                 className="text-4xl text-[#C9A962]/40 font-light tracking-wider"
