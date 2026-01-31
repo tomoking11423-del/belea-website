@@ -28,12 +28,12 @@ export default function BrandStory() {
           className="text-center mb-16"
         >
           <p
-            className="text-2xl md:text-3xl text-[#C9A962] mb-6 leading-relaxed"
+            className="text-2xl md:text-3xl text-[#C9A962] mb-8 leading-relaxed"
             style={{ fontFamily: "var(--font-noto-serif-jp), serif" }}
           >
-            通うたび、
+            「通うたび、
             <br />
-            心のトーンも一段上がる。
+            心のトーンも一段上がる。」
           </p>
           <p className="text-[#6B6B6B] leading-loose">
             をモットーに、
@@ -67,7 +67,7 @@ export default function BrandStory() {
             <span className="text-[#C9A962] font-medium">喜びや幸福を感じて欲しい。</span>
             <br />
             <br />
-            という願いを込めて
+            という願いを込めて、
             <br />
             BELEAと名付けました。
           </p>
@@ -100,21 +100,33 @@ export default function BrandStory() {
             </p>
           </div>
 
+          {/* Customer Time */}
+          <div className="text-center py-8">
+            <p className="text-[#4A4A4A] leading-loose text-lg">
+              お客様の大切な時間を、
+              <br />
+              <span className="text-[#C9A962] font-medium">最高のひとときに。</span>
+            </p>
+          </div>
+
           {/* Time Efficiency */}
           <div className="bg-[#C9A962]/10 rounded-lg p-6 md:p-8">
             <p className="text-[#4A4A4A] leading-loose text-center">
-              <span className="font-medium">【時短】</span>はただ早くするのではなく、
+              <span className="font-medium">【時短】</span>とは、
+              <br />
+              ただ早くするのではありません。
+              <br />
               <br />
               技術はもちろんのこと、
               <br />
-              無駄な時間を省きながら
+              無駄な時間を省きながら、
               <br />
               お客様に満足していただく。
               <br />
               <br />
-              お客様の大切な時間を、
+              それが私たちの考える
               <br />
-              最高の体験に変えていきます。
+              <span className="text-[#C9A962] font-medium">「時短」</span>です。
             </p>
           </div>
         </motion.div>

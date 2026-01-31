@@ -1,20 +1,24 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const navItems = [
-  { label: "BELEA", href: "/concept" },
+  { label: "BELEAの想い", href: "/concept" },
   { label: "料金・メニュー", href: "/menu" },
   { label: "お客様の声", href: "/voice" },
-  { label: "よくある質問", href: "/faq" },
   { label: "店舗一覧", href: "/stores" },
   { label: "会社概要", href: "/company" },
+  { label: "よくある質問", href: "/faq" },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,10 +32,13 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  // On sub-pages, always show the solid background
+  const showSolidBg = isScrolled || !isHomePage;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        showSolidBg
           ? "bg-white/95 backdrop-blur-sm shadow-md"
           : "bg-transparent"
       }`}
@@ -40,25 +47,24 @@ export default function Header() {
         <div className="flex items-center justify-between h-[70px]">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <span
-              className={`text-2xl font-semibold tracking-wider transition-colors duration-300`}
-              style={{
-                fontFamily: "var(--font-cormorant), serif",
-                color: isScrolled ? "#C9A962" : "#C9A962",
-              }}
-            >
-              BELEA
-            </span>
+            <Image
+              src="/images/common/logo.png"
+              alt="BELEA"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={`text-sm font-medium transition-colors duration-300 hover:text-[#C9A962] ${
-                  isScrolled ? "text-[#4A4A4A]" : "text-white"
+                  showSolidBg ? "text-[#4A4A4A]" : "text-white"
                 }`}
               >
                 {item.label}
@@ -74,11 +80,11 @@ export default function Header() {
           >
             {isMobileMenuOpen ? (
               <HiX
-                className={`w-6 h-6 ${isScrolled ? "text-[#4A4A4A]" : "text-white"}`}
+                className={`w-6 h-6 ${showSolidBg ? "text-[#4A4A4A]" : "text-white"}`}
               />
             ) : (
               <HiMenu
-                className={`w-6 h-6 ${isScrolled ? "text-[#4A4A4A]" : "text-white"}`}
+                className={`w-6 h-6 ${showSolidBg ? "text-[#4A4A4A]" : "text-white"}`}
               />
             )}
           </button>
