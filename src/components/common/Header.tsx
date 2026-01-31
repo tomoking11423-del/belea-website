@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const navItems = [
-  { label: "コンセプト", href: "#concept" },
-  { label: "メニュー", href: "#menu" },
-  { label: "お客様の声", href: "#voice" },
-  { label: "よくある質問", href: "#faq" },
-  { label: "会社概要", href: "#company" },
-  { label: "アクセス", href: "#access" },
+  { label: "コンセプト", href: "/concept" },
+  { label: "メニュー", href: "/menu" },
+  { label: "お客様の声", href: "/voice" },
+  { label: "よくある質問", href: "/faq" },
+  { label: "会社概要", href: "/company" },
+  { label: "アクセス", href: "/access" },
 ];
 
 export default function Header() {
@@ -24,19 +24,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      const headerHeight = 70;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
+  const handleMobileMenuClick = () => {
     setIsMobileMenuOpen(false);
   };
 
@@ -51,7 +39,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-[70px]">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <a href="/" className="flex items-center">
             <span
               className={`text-2xl font-semibold tracking-wider transition-colors duration-300`}
               style={{
@@ -69,7 +57,6 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
                 className={`text-sm font-medium transition-colors duration-300 hover:text-[#C9A962] ${
                   isScrolled ? "text-[#4A4A4A]" : "text-white"
                 }`}
@@ -109,7 +96,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
+              onClick={handleMobileMenuClick}
               className="block px-6 py-4 text-[#4A4A4A] hover:bg-[#F9F9F7] hover:text-[#C9A962] transition-colors border-b border-gray-100"
             >
               {item.label}
