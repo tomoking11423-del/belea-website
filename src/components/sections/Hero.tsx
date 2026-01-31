@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative w-full">
+    <section className="relative w-full pt-[70px]">
       {/* Hero Image */}
       <motion.div
         initial={{ opacity: 0 }}
