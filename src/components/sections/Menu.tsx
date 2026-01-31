@@ -5,7 +5,6 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import SectionTitle from "../common/SectionTitle";
 import { menuCategories, formatPrice } from "@/data/menu";
-import { HiStar } from "react-icons/hi";
 
 interface MenuProps {
   hotpepperUrl: string;
@@ -56,17 +55,6 @@ export default function Menu({ hotpepperUrl }: MenuProps) {
                   <div className="flex-1 mb-2 sm:mb-0">
                     <div className="flex items-start gap-2 mb-1 flex-wrap">
                       <h4 className="font-medium text-[#4A4A4A] leading-relaxed">{item.name}</h4>
-                      {item.isPopular && (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#C9A962] text-white text-xs rounded shrink-0">
-                          <HiStar className="w-3 h-3" />
-                          人気
-                        </span>
-                      )}
-                      {item.condition && (
-                        <span className="inline-flex items-center px-2 py-0.5 bg-[#E8E6E3] text-[#4A4A4A] text-xs rounded shrink-0">
-                          {item.condition}
-                        </span>
-                      )}
                     </div>
                     {item.description && (
                       <p className="text-sm text-[#6B6B6B]">{item.description}</p>
