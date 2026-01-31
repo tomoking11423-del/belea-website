@@ -54,21 +54,23 @@ export default function Menu({ hotpepperUrl }: MenuProps) {
                   }`}
                 >
                   <div className="flex-1 mb-2 sm:mb-0">
-                    <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <h4 className="font-medium text-[#4A4A4A]">{item.name}</h4>
+                    <div className="flex items-start gap-2 mb-1 flex-wrap">
+                      <h4 className="font-medium text-[#4A4A4A] leading-relaxed">{item.name}</h4>
                       {item.isPopular && (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#C9A962] text-white text-xs rounded">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#C9A962] text-white text-xs rounded shrink-0">
                           <HiStar className="w-3 h-3" />
                           人気
                         </span>
                       )}
-                      {item.isReturning && (
-                        <span className="inline-flex items-center px-2 py-0.5 bg-[#4A4A4A] text-white text-xs rounded">
-                          リピーター様
+                      {item.condition && (
+                        <span className="inline-flex items-center px-2 py-0.5 bg-[#E8E6E3] text-[#4A4A4A] text-xs rounded shrink-0">
+                          {item.condition}
                         </span>
                       )}
                     </div>
-                    <p className="text-sm text-[#6B6B6B]">{item.description}</p>
+                    {item.description && (
+                      <p className="text-sm text-[#6B6B6B]">{item.description}</p>
+                    )}
                     {item.duration && (
                       <p className="text-xs text-[#6B6B6B] mt-1">
                         施術時間：{item.duration}
