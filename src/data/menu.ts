@@ -143,6 +143,12 @@ export const menuCategories: MenuCategory[] = [
         description: "各部位1箇所あたりの料金です。",
         price: 2200,
       },
+      {
+        id: "option-3300",
+        name: "襟足うなじ",
+        description: "襟足・うなじ周りのワックス脱毛。",
+        price: 3300,
+      },
     ],
   },
 ];
