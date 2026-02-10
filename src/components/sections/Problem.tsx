@@ -41,7 +41,7 @@ export default function Problem() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full bg-[#4A4A4A]/80 border-2 border-[#C9A962] flex items-center justify-center p-4"
+              className="w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full bg-[#4A4A4A]/80 border-2 border-[#C9A962] flex items-center justify-center p-3 md:p-4"
             >
               <p className="text-white text-xs sm:text-sm text-center whitespace-pre-line leading-relaxed">
                 {problem}
@@ -58,7 +58,7 @@ export default function Problem() {
           className="text-center"
         >
           <div className="inline-block bg-[#C9A962] text-white px-8 py-4 rounded">
-            <p className="text-lg sm:text-xl font-medium">
+            <p className="text-base sm:text-lg md:text-xl font-medium">
               その悩み、フェイスワックスで解決できます
             </p>
           </div>
